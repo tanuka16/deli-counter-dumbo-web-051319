@@ -15,8 +15,9 @@ end
 
 def take_a_number(katz_deli, name)                #katz_deli == the current line of people & the name of the person joining the end of the line
   count = 1
+  #push the given object(s) on to the end of this array. This expression returns the array itself, so several appends may be chained together.
   #katz_deli<<name
-  katz_deli.push(name)                            #push the given object(s) on to the end of this array.
+  katz_deli.push(name)
   puts "Welcome, #{name}. You are number #{katz_deli.length} in line."
 end
 
@@ -28,5 +29,7 @@ def now_serving(katz_deli)
     puts "Currently serving #{katz_deli[0]}."
     katz_deli.shift
   end
-
+#as people leave the line, then the method will need to move to the next person,
+#so use shift to removes the first element of the katz_deli array and returns it
+#(shifting all other elements down by one). Returns nil if the array is empty.
 end
